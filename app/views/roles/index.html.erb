@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h1>Roles</h1>
+</div>
+
+<% @list_of_roles.each do |role| %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= role.character_name %></h3>
+        </div>
+        <div class="panel-body">
+          <dl>
+            <dt>Movie</dt>
+            <dd><%= role.movie.title %></dd>
+
+            <dt>Actor</dt>
+            <dd><%= role.actor.name %></dd>
+
+            <dt>Actions</dt>
+            <dd>
+              <a href="/roles/<%= role.id %>" class="btn btn-primary">Show</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

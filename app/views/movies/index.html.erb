@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Movies</h1>
+</div>
+
+<% @list_of_movies.each do |movie| %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= movie.title %></h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-2">
+              <img src="<%= movie.image_url %>" class="img-responsive">
+          </div>
+          <div class="col-sm-10">
+            <dl>
+              <dt>Year</dt>
+              <dd><%= movie.year %></dd>
+
+              <dt>Director</dt>
+              <dd><%= movie.director.name %></dd>
+
+              <dt>Description</dt>
+              <dd><%= movie.description %></dd>
+
+              <dt>Actions</dt>
+              <dd>
+                <a href="/movies/<%= movie.id %>" class="btn btn-primary">Show</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

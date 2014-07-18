@@ -1,0 +1,15 @@
+<pre><%= @actor.to_yaml %></pre>
+
+<h1>Filmography</h1>
+
+<ul>
+  <% @actor.roles.each do |role| %>
+
+    <li>
+      <a href="/movies/<%= role.movie.id %>">
+        <%= role.movie.title %> (<%= role.movie.year %>) played <%= role.character_name %>
+      </a>
+    </li>
+
+  <% end %>
+</ul>

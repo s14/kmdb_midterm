@@ -1,0 +1,9 @@
+<pre><%= @movie.to_yaml %></pre>
+
+<h2>Cast</h2>
+
+<% @movie.actors.each do |actor| %>
+
+  <li><%= actor.name %></li>
+
+<% end %>
